@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiRequest = axios.create({
   //baseURL: "http://localhost:8800/api",
-  baseURL: "https://estate-server-j0yg.onrender.com",
+  baseURL: "https://estate-server-j0yg.onrender.com/api",
   withCredentials: true,
 });
 
