@@ -65,7 +65,7 @@ function Login() {
     //     <img src="/bg.png" alt="" />
     //   </div>
     // </div>
-    <div>log in</div>
+    <div>login</div>
   );
 }
 
