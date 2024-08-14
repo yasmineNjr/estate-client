@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
@@ -24,7 +25,7 @@ function Navbar() {
         <a href="/">Home</a>
         <a href="/">About</a>
         <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        {/* <a href="/">Agents</a> */}
       </div>
       <div className="right">
         {currentUser ? (

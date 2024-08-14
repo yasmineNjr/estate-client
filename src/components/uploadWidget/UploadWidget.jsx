@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useEffect, useRef, useState } from "react";
 
 // Create a context to manage the script loading state

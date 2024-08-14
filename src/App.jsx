@@ -1,3 +1,4 @@
+import React from "react";
 import HomePage from "./routes/homePage/homePage";
 import {
   createBrowserRouter,
@@ -34,7 +35,6 @@ function App() {
           element:<SinglePage/>,
           loader: singlePageLoader
         },
-        
         {
           path:"/login",
           element:<Login/>

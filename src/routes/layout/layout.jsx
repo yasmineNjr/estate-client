@@ -1,3 +1,4 @@
+import React from "react";
 import "./layout.scss";
 import Navbar from "../../components/navbar/Navbar"
 import { Navigate, Outlet } from "react-router-dom";

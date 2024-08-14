@@ -1,3 +1,4 @@
+import React from "react";
 import "./singlePage.scss";
 import Slider from "../../components/slider/Slider";
 import Map from "../../components/map/Map";

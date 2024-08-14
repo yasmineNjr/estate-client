@@ -1,3 +1,4 @@
+import React from "react";
 import ReactQuill from 'react-quill';
 import "./newPostPage.scss";
 import "react-quill/dist/quill.snow.css";
