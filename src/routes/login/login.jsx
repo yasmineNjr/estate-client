@@ -38,9 +38,7 @@ function Login() {
       //     withCredentials : true
       //   }
       // )
-      
       updateUser(res.data);
-      
       navigate('/');
     }catch(err){
       console.log(err);

@@ -9,7 +9,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
-
+  // console.log(currentUser);
   const fetch = useNotificationStore((state) => state.fetch);
   const number = useNotificationStore((state) => state.number);
 
@@ -60,7 +60,7 @@ function Navbar() {
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
-          <a href="/">Agents</a>
+          {/* <a href="/">Agents</a> */}
           <a href="/">Sign in</a>
           <a href="/">Sign up</a>
         </div>
