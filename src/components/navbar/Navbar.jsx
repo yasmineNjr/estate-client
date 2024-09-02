@@ -11,7 +11,8 @@ function Navbar() {
   const { currentUser } = useContext(AuthContext);
   // console.log(currentUser);
   const fetch = useNotificationStore((state) => state.fetch);
-  const number = useNotificationStore((state) => state.number);
+  // const number = useNotificationStore((state) => state.number);
+  const number = 3;
 
   if(currentUser) fetch();
 
@@ -32,7 +33,7 @@ function Navbar() {
           <div className="user">
             <img
               // src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              src={currentUser.avatar || "/noavatar.jpg"}
+              src={ currentUser.avatar ||"/noavatar.jpg"} 
               alt=""
             />
             <span>{currentUser.username}</span>
@@ -51,18 +52,19 @@ function Navbar() {
         )}
         <div className="menuIcon">
           <img
-            src="/menu.png"
+            src={"/menu.png"}
             alt=""
             onClick={() => setOpen((prev) => !prev)}
           />
         </div>
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
+          <a href="/about">About</a>
+          <a href="/contactus">Contact</a>
           {/* <a href="/">Agents</a> */}
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          {!currentUser && <a href="/login">Sign in</a>}
+          {!currentUser && <a href="/register">Sign up</a>}
+          {currentUser && <a href="/profile">Profile</a>}
         </div>
       </div>
     </nav>

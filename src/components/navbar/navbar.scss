@@ -81,7 +81,7 @@ nav {
           display: none;
         }
       }
-
+      
       .profile{
         padding: 12px 24px;
         background-color: #fece51;
@@ -104,11 +104,37 @@ nav {
         }
 
       }
+      .profile1{
+        padding: 12px;
+        cursor: pointer;
+        border: none;
+        position: relative;
+        margin: 0;
+       
+        .notification{
+          position: absolute;
+          top: 0px;
+          right: 20px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+      }
     }
 
     .register {
       background-color: #fece51;
       height: fit-content;
+
+      @include sm {
+        display: none;
+      }
     }
 
     .menuIcon {
