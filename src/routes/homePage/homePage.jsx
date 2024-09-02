@@ -14,10 +14,7 @@ function HomePage() {
         <div className="wrapper">
           <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            explicabo suscipit cum eius, iure est nulla animi consequatur
-            facilis id pariatur fugit quos laudantium temporibus dolor ea
-            repellat provident impedit!
+          Discover your next home with ease and confidence. EliteEstate is your trusted partner in navigating the real estate market, whether you&apos;re buying, selling, or renting. We&apos;ve created a platform that brings you closer to your dream property with just a few taps.
           </p>
           <SearchBar />
           <div className="boxes">
