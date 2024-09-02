@@ -11,8 +11,7 @@ function Navbar() {
   const { currentUser } = useContext(AuthContext);
   // console.log(currentUser);
   const fetch = useNotificationStore((state) => state.fetch);
-  // const number = useNotificationStore((state) => state.number);
-  const number = 3;
+  const number = useNotificationStore((state) => state.number);
 
   if(currentUser) fetch();
 
