@@ -6,24 +6,46 @@
 
   @include md{
     flex-direction: column;
-    overflow: scroll;
+    // overflow: scroll;
   }
 
   .details {
     flex: 3;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     padding-bottom: 50px;
 
-    @include md{
-      flex:none;
-      height: max-content;
-    }
+    // @include md{
+    //   flex:none;
+    //   height: max-content;
+    // }//************
 
     .wrapper{
-      padding-right: 50px;
+      // padding-right: 50px;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 50px;
+      //******************
+      padding-right: 100px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 50px;
+      height: 100%;
+      
+      @include lg{
+        padding-right: 50px;
+      }
+
+      @include md{
+        padding: 0;
+      }
+
+      @include sm{
+        justify-content: flex-start;
+      }
+      //********************
+
+
 
       .title{
         display: flex;
@@ -83,6 +105,27 @@
     .wrapper{
       padding: 0px 20px;
       height: 100%;
+    }
+  }
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+
+      @include lg {
+        width: 105%;
+      }
     }
   }
 }

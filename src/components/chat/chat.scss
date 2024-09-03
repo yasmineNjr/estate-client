@@ -1,5 +1,6 @@
 .chat {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -12,6 +13,27 @@
 
     h1 {
       font-weight: 300;
+    }
+    .contacts {
+      display: flex;
+      flex-direction: row; 
+      align-items: center; justify-content: space-between; 
+      margin-right: 20px; 
+      overflow-x: auto; 
+      width: 100%; 
+      gap: 25px;
+
+      .contact {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        cursor: pointer;
+        padding: 5px;
+      }
+      .contact:hover {
+        background-color: white;
+      }
     }
 
     .message {

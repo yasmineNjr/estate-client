@@ -8,8 +8,9 @@ import { format } from 'timeago.js';
 import { useNotificationStore } from "../../lib/notificationStore";
 
 function Chat({ chats }) {
-
+  console.log(chats);
   const [chat, setChat] = useState(null);
+  const [users, setUsers] = useState([ { id: 1, username: 'xxx', avatar: ''}, { id: 2, username: 'yyy', avatar: ''}, { id: 3, username: 'zzz', avatar: ''}, { id: 4, username: 'nnn', avatar: ''}, { id: 5, username: 'mmm', avatar: ''}, { id: 6, username: 'www', avatar: ''}]);
   const { currentUser } = useContext(AuthContext);
   const { socket } = useContext(SocketContext);
 
@@ -17,6 +18,17 @@ function Chat({ chats }) {
 
   const decrease = useNotificationStore((state) => state.decrease);
 
+  const handleGetUsers = async () => {
+    try {
+      const res = await apiRequest("/users/");
+      setUsers(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    handleGetUsers();
+  }, []);
   useEffect(() => {//to scroll to the last message
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chat]);
@@ -78,6 +90,26 @@ function Chat({ chats }) {
     <div className="chat">
       <div className="messages">
         <h1>Messages</h1>
+        {/* <div className= 'contacts'>
+          {
+            users.map((user) => (
+              <div  key={user.id} 
+                    className="contact"
+                    // onClick={() => handleOpenChat(c.id, c.receiver)}
+              >
+                <img
+                  style={{width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',}}
+                  src={ user.avatar ||"/noavatar.jpg"} 
+                  alt=""
+                />
+                <span>{user.username}</span>
+              </div>
+            ))
+          }
+        </div> */}
         {
           chats?.map(c => (
             <div className="message" key={c.id} 
