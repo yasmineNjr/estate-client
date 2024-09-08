@@ -19,6 +19,7 @@ function Card({ item }) {
   const navigate = useNavigate();
 
   const [saved, setSaved] = useState(false);
+  
   useEffect(() => {
     checkIfSaved().then(value => setSaved(value));
   }, []); 
@@ -50,7 +51,7 @@ function Card({ item }) {
           <img src="/pin.png" alt="" />
           <span>{item.address}</span>
         </p>
-        <p className="price">$ {item.Price}</p>
+        <p className="price">${item.Price}</p>
         <div className="bottom">
           <div className="features">
             <div className="feature">

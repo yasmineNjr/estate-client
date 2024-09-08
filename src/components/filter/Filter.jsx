@@ -4,16 +4,28 @@ import "./filter.scss";
 import { useState } from "react";
 
 function Filter() {
-
+  
   const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState({
-    type: searchParams.get("type") || "",
-    city: searchParams.get("city") || "",
-    property: searchParams.get("property") || "",
-    minPrice: searchParams.get("minPrice") || 0,
-    maxPrice: searchParams.get("maxPrice") || 10000000,
-    bedroom: searchParams.get("bedroom") || 1, 
-  });
+  const [query, setQuery] = useState(
+    searchParams.get("city")  ? 
+    {
+      type: searchParams.get("type") || "",
+      city: searchParams.get("city") || "",
+      property: searchParams.get("property") || "",
+      minPrice: searchParams.get("minPrice") || 0,
+      maxPrice: searchParams.get("maxPrice") || 10000000,
+      bedroom: searchParams.get("bedroom") || "", 
+    } 
+    :
+    {
+      type: searchParams.get("type") || "",
+      property: searchParams.get("property") || "",
+      minPrice: searchParams.get("minPrice") || 0,
+      maxPrice: searchParams.get("maxPrice") || 10000000,
+      bedroom: searchParams.get("bedroom") || "", 
+    }
+  );
+
   const handleChange = (e) => {
     setQuery({
       ...query,
@@ -27,7 +39,8 @@ function Filter() {
   return (
     <div className="filter">
       <h1>
-        Search results for <b>{searchParams.get("city")}</b>
+        {/* Search results for <b>{searchParams.get("city")}</b> */}
+        Search results for <b>{query.city ? query.city : ""}</b>
       </h1>
       <div className="top">
         <div className="item">
@@ -38,7 +51,8 @@ function Filter() {
             name="city"
             placeholder="City Location"
             onChange={handleChange}
-            defaultValue={query.city}
+            // defaultValue={query.city}
+            defaultValue={query.city ? query.city : ""}
           />
         </div>
       </div>
@@ -91,7 +105,7 @@ function Filter() {
             name="bedroom"
             placeholder="any"
             onChange={handleChange}
-            defaultValue={query.bedRoom}
+            defaultValue={query.bedroom}
           />
         </div>
         <button onClick={handleFilter}>

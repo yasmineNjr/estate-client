@@ -139,7 +139,7 @@ nav {
 
     .menuIcon {
       display: none;
-      z-index: 999;
+      z-index: 1100;
 
       img {
         width: 36px;
@@ -166,6 +166,7 @@ nav {
       align-items: center;
       justify-content: center;
       font-size: 24px;
+      z-index: 1000;
 
       &.active {
         right: 0;

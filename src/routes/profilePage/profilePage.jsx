@@ -10,7 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 function ProfilePage() {
 
   const data = useLoaderData();
-  
+  console.log(data.postResponse);
   const navigate = useNavigate();
   const { currentUser, updateUser } = useContext(AuthContext);
 
@@ -69,7 +69,6 @@ function ProfilePage() {
             <div className="title">
               <h1>Saved List</h1>
             </div>
-            {/* <List/> */}
             <Suspense fallback={<p>Loading...</p>}>
               <Await
                 resolve={data.postResponse}

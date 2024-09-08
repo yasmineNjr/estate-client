@@ -39,7 +39,7 @@ export const listData = [
     bedroom: 2,
     bathroom: 1,
     price: 1000,
-    address: "234 Kingsway, London,",
+    address: "234 Kingsway, London",
     latitude: 53.8008,
     longitude: -1.5491,
   },
